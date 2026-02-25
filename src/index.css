@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 35% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 230 30% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 230 30% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 172 66% 50%;
+    --primary-foreground: 230 35% 12%;
+
+    --secondary: 262 83% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 25% 22%;
+    --muted-foreground: 230 15% 65%;
+
+    --accent: 45 100% 60%;
+    --accent-foreground: 230 35% 12%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 230 20% 25%;
+    --input: 230 20% 25%;
+    --ring: 172 66% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 230 30% 16%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 172 66% 50%;
+    --sidebar-primary-foreground: 230 35% 12%;
+    --sidebar-accent: 230 25% 22%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 230 20% 25%;
+    --sidebar-ring: 172 66% 50%;
+
+    --gradient-bg: linear-gradient(135deg, hsl(230, 35%, 12%) 0%, hsl(262, 40%, 18%) 50%, hsl(230, 35%, 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(172, 66%, 50%), hsl(190, 80%, 45%));
+    --gradient-option-a: linear-gradient(135deg, hsl(0, 72%, 55%), hsl(15, 80%, 55%));
+    --gradient-option-b: linear-gradient(135deg, hsl(220, 80%, 55%), hsl(240, 70%, 55%));
+    --gradient-option-c: linear-gradient(135deg, hsl(45, 100%, 50%), hsl(35, 100%, 50%));
+    --gradient-option-d: linear-gradient(135deg, hsl(145, 65%, 45%), hsl(160, 70%, 40%));
+    --gradient-correct: linear-gradient(135deg, hsl(145, 65%, 45%), hsl(160, 70%, 40%));
+    --gradient-wrong: linear-gradient(135deg, hsl(0, 72%, 55%), hsl(0, 60%, 40%));
+  }
+
+  .light {
+    --background: 220 20% 96%;
+    --foreground: 230 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 15%;
+    --primary: 172 66% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 262 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 88%;
+    --muted-foreground: 230 15% 40%;
+    --accent: 45 100% 45%;
+    --accent-foreground: 230 35% 12%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 145 65% 38%;
+    --success-foreground: 0 0% 100%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 172 66% 40%;
+    --gradient-bg: linear-gradient(135deg, hsl(220, 20%, 96%) 0%, hsl(262, 30%, 92%) 50%, hsl(220, 20%, 96%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(172, 66%, 40%), hsl(190, 80%, 35%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-option-a {
+    background: var(--gradient-option-a);
+  }
+  .gradient-option-b {
+    background: var(--gradient-option-b);
+  }
+  .gradient-option-c {
+    background: var(--gradient-option-c);
+  }
+  .gradient-option-d {
+    background: var(--gradient-option-d);
+  }
+  .gradient-correct {
+    background: var(--gradient-correct);
+  }
+  .gradient-wrong {
+    background: var(--gradient-wrong);
+  }
+  .glass-card {
+    background: hsl(230 30% 16% / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(230 20% 30% / 0.5);
+  }
+  .light .glass-card {
+    background: hsl(0 0% 100% / 0.7);
+    border: 1px solid hsl(220 15% 85% / 0.8);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px hsl(172 66% 50% / 0.5);
+  }
+}
